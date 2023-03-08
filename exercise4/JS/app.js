@@ -3,10 +3,14 @@ let A = 225;
 let B = 175;
 let C = 125;
 let D = 75; 
+//Exponentially increase the size of an ellipse.
+let eSize = 3; // Original Size
+let eLoc = 40; // Original Location
+
 
 function setup () {
     //happens only once
-    createCanvas(600, 700,); //add  WEBGL for 3D shapes
+    createCanvas(600, 700); //add  WEBGL for 3D shapes
     //myCanvas.parent('myContainer');
 }
 
@@ -56,8 +60,46 @@ function draw() {
     stroke(25,50,75);
     ellipse (mouseX, mouseY, 50,50);
 
+    // RED CIRCLES
+    /*strokeWeight(4);
+    stroke(255,0,0);
+
+    ellipse(eLoc, eLoc, eSize, eSize);
+    ellipse(eLoc * 2, eLoc * 2, pow(eSize, 2), pow(eSize, 2));
+    ellipse(eLoc * 4, eLoc * 4, pow(eSize, 3), pow(eSize, 3));
+    ellipse(eLoc * 8, eLoc * 8, pow(eSize, 4), pow(eSize, 4));
+    ellipse(eLoc * 10, eLoc * 10, pow(eSize, 5), pow(eSize, 5));
+    */  
+    //BLUE CIRCLES
+    strokeWeight(4);
+    stroke(0,0,255);
+    ellipse(50, 350, pow(eSize, 2.5), pow(eSize, 2.5));
+    ellipse(50, 350, pow(eSize, 3.5), pow(eSize, 3.5));
+    ellipse(50, 350, pow(eSize, 4.5), pow(eSize, 4.5));
+    ellipse(50, 350, pow(eSize, 5.5), pow(eSize, 5.5));
+
+     //GREEN CIRCLES
+     stroke(0,255,0);
+     ellipse(550, 150, pow(eSize, 2.5), pow(eSize, 2.5));
+     ellipse(550, 150, pow(eSize, 3.5), pow(eSize, 3.5));
+     ellipse(550, 150, pow(eSize, 4.5), pow(eSize, 4.5));
+     ellipse(550, 150, pow(eSize, 5.5), pow(eSize, 5.5));
+
+    //BOTTOM RED CIRCLES
+    stroke(255,0,0);
+    ellipse(550, 550, pow(eSize, 2.5), pow(eSize, 2.5));
+    ellipse(550, 550, pow(eSize, 3.5), pow(eSize, 3.5));
+    ellipse(550, 550, pow(eSize, 4.5), pow(eSize, 4.5));
+    ellipse(550, 550, pow(eSize, 5.5), pow(eSize, 5.5));
+
+    //DONUT
+    //rotateX(frameCount * 0.01);
+    //rotateY(frameCount * 0.01);
+    //torus(30, 15);
+ 
+
     helperCoordintates();
-}
+}  
 
 function helperCoordintates() {
     fill(255);
