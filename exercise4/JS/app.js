@@ -60,7 +60,7 @@ function draw() {
     stroke(25,50,75);
     ellipse (mouseX, mouseY, 50,50);
 
-    // RED CIRCLES
+    // RED CIRCLES from corner
     /*strokeWeight(4);
     stroke(255,0,0);
 
