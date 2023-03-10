@@ -3,6 +3,11 @@ let A = 225;
 let B = 175;
 let C = 125;
 let D = 75; 
+var r = 0;
+var b = 0;
+let fr = 60;
+//let X = map(mouseX, 0, width, 0, 150);
+//let Z = map(mouseX, 0, width, 40, 300);
 //Exponentially increase the size of an ellipse.
 let eSize = 3; // Original Size
 let eLoc = 40; // Original Location
@@ -12,12 +17,39 @@ function setup () {
     //happens only once
     createCanvas(600, 700, WEBGL); //add  WEBGL for 3D shapes
     //myCanvas.parent('myContainer');
+    frameRate(fr);
+    background(0);
 }
 
 function draw() {
     translate(-300,-350,0); //mess around with this to get it to work with WEBGL
     //happens for every frame refresh (about 60/s)
-    background(0,0,0);
+    /* old bg function
+    r = map(mouseX, 0, 600, 0, 78);
+    b = map(mouseX, 0, 600, 0, 66);
+    background(r, 0, b); //bg color changes based on mouseX
+    //background(0,0,0);
+    */
+
+    //new bg function
+    fill(0,10); //grayness(0 is black) & opacity
+    rect (0,0,width,height);
+     /* for this effect, each frame is being covered by a slightly
+     trasnparent black rectangle, so it take a long time for old frames to erase.
+     the more opaque the rectangle the faster things erase*/
+
+    //new stars
+    fill(255);
+    ellipse(random(width), random(height), 4, 4);
+    /*old stars
+    push();
+    frameRate(10); 
+    fill(255);
+    ellipse(random(0,600), random(0,700), 10, 10);
+    ellipse(random(0,600), random(0,700), 20, 20);
+    ellipse(random(0,600), random(0,700), 5, 5);
+    pop();
+    */
     
     //BASE CIRCLES
     //noFill();
@@ -103,7 +135,7 @@ function draw() {
     ellipse(550, 550, pow(eSize, 5.5), pow(eSize, 5.5));
 
     
-
+    
     /*
     DONUT
     rotateX(frameCount * 0.01);
@@ -182,15 +214,18 @@ function draw() {
     sphere(30); //bottom L
 
     
+    
     /*
+    push();
     //whats this: https://p5js.org/examples/math-map.html
-    // Scale the mouseX value from 0 to 720 to a range between 0 and 175
-   let c = map(mouseX, 0, width, 0, 175);
-   // Scale the mouseX value from 0 to 720 to a range between 40 and 300
-   let d = map(mouseX, 0, width, 40, 300);
-   fill(255, c, 0);
-   ellipse(width/2, height/2, d, d);
-      */
+    //Scale the mouseX value from 0 to 720 to a range between 0 and 175
+    let X = map(mouseX, 0, width, 0, 150);
+    //Scale the mouseX value from 0 to 720 to a range between 40 and 300
+    let Z = map(mouseX, 0, width, 40, 300);
+    fill(255, X, 0); //change color
+    ellipse(width/2,height/2, 200, Z, Z); //change size
+    pop();
+    */
     
 }  
 
