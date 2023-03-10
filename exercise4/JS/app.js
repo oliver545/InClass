@@ -140,6 +140,7 @@ function draw() {
 
     helperCoordintates();
 
+    //ORBS
     translate(250,350,0);
     //move your mouse to change light direction
     let dirX = (mouseX / width - 0.5) * 2;
@@ -180,8 +181,16 @@ function draw() {
     fill(237,66,121);
     sphere(30); //bottom L
 
-
-  
+    
+    /*
+    //whats this: https://p5js.org/examples/math-map.html
+    // Scale the mouseX value from 0 to 720 to a range between 0 and 175
+   let c = map(mouseX, 0, width, 0, 175);
+   // Scale the mouseX value from 0 to 720 to a range between 40 and 300
+   let d = map(mouseX, 0, width, 40, 300);
+   fill(255, c, 0);
+   ellipse(width/2, height/2, d, d);
+      */
     
 }  
 
