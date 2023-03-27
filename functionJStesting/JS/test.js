@@ -1,42 +1,46 @@
 function setup() {
-    createCanvas(720, 400);
-    background(51);
-    drawFace(100, 200, 20);  // left face with bigger eyes 
-    drawFace(300, 200, 10);  // right face
-    drawEar(100,100,60);
-    drawEar(300,100,60);
+    createCanvas(720, 720);
+    background(0);
+    frameRate(5);
   }
   
-  function drawFace(x, y, eyeSize) {
-    push();
-    fill(110, 180, 200);
-    translate(x,y);
-    ellipse(0, 0, 150, 150); //head
-    drawEye(-25, -10, eyeSize);
-    drawEye(15, -10, eyeSize);
-    fill(37,120,97);
-    rect(-30, 30, 60,5); //mouth
-    pop();
-  }
+  function draw(){ 
+    planet (100,100,20);
+    planet (300,200,100);
+    planet (600,150,50);
+    planet (600,150,50);
+    planet (150,500,80);
+    planet (400,450,30);
+    planet (550,600,60);
+    planet (550,350,40);
+    frameRate(5);
+}
   
-  function drawEye(x,y, eyeSize) {
-    push();
-    translate(x,y);
-    fill(255); //white
-    ellipse(0, 0, eyeSize, eyeSize);
-    fill(0); //black
-    ellipse(0, 0, eyeSize/2.0, eyeSize/2.0);
-    pop();
+  function planet(x,y,diameter){
+    /*colors
+    r = 124,82,55,35,0
+    g = 158,82,37,17,0
+    b = 178,140,84,35,0
+    */
+
+    r = random(35,124);
+    g = random(17,158);
+    b = random(35,178);
+    a = random(100,255);
+    //fill(226,192,68,a);
+    fill(x+diameter*2,diameter/2,diameter+50,a);
+    ellipse(x-diameter-40,y,diameter/4,diameter/4);//planet moons
+    ellipse(x-diameter,y+diameter+10,diameter/4,diameter/4);
+    ellipse(x+diameter-30,y-diameter,diameter/4,diameter/4);
+    ellipse(x+diameter-20,y+diameter,diameter/4,diameter/4);
+    ellipse(x+diameter+30,y,diameter/4,diameter/4);
+    
+    
+    
+    fill(r,g,b,a);
+    ellipse(x,y,diameter,diameter); //the circles
   }
 
   
-
-  function drawEar(x,y, earSize){
-    push();
-    fill(50,23,45);
-    translate(x,y);
-    ellipse(0, 0, earSize);
-    pop();
-  }
 
   
