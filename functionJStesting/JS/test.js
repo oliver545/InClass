@@ -41,6 +41,10 @@ function setup() {
     ellipse(x,y,diameter,diameter); //the circles
   }
 
+  //arguments?
+  //add for loop
+  //multiple layers
+  //use random/noise function
   
 
   
