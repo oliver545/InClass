@@ -1,3 +1,5 @@
+/* function, arguments, parameters, for/while loop*/
+
 function setup() {
     createCanvas(720, 720);
     background(0);
@@ -5,6 +7,8 @@ function setup() {
   }
   
   function draw(){ 
+    fill(0);
+    rect(0,0,720,720);
     planet (100,100,20);
     planet (300,200,100);
     planet (600,150,50);
@@ -12,11 +16,20 @@ function setup() {
     planet (150,500,80);
     planet (400,450,30);
     planet (550,600,60);
-    planet (550,350,40);
-    frameRate(5);
+    planet (550,350,40); /*"550,350,40" are the arguments*/
+  
+
+    for(let meep=0; meep<=50;meep++){
+      let x = random(720);
+      let y = random(720);
+      let dia = random(20);
+      fill(255);
+      ellipse(x,y,dia,dia);
+    }
+
 }
   
-  function planet(x,y,diameter){
+  function planet(x,y,diameter){ /*parameter is the "x,y,diameter"*/
     /*colors
     r = 124,82,55,35,0
     g = 158,82,37,17,0
@@ -39,12 +52,15 @@ function setup() {
     
     fill(r,g,b,a);
     ellipse(x,y,diameter,diameter); //the circles
+  
   }
 
-  //arguments?
-  //add for loop
-  //multiple layers
-  //use random/noise function
+  
+
+  
+  
+
+
   
 
   
