@@ -7,7 +7,8 @@ function setup() {
   }
   
   function draw(){ 
-    fill(0);
+    noStroke();
+    fill(0,0,0,180);
     rect(0,0,720,720);
     planet (100,100,20);
     planet (300,200,100);
