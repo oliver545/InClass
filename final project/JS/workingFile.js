@@ -7,11 +7,10 @@ function draw(){
     noStroke();
     fill (255);
     rect (5,5,10,10);
-    /*let dirX = (mouseX / width - 0.5) * 2;
+    let dirX = (mouseX / width - 0.5) * 2;
     let dirY = (mouseY / height - 0.5) * 2;
     directionalLight(250, 250, 250, -dirX, -dirY, -1);
     fill(255,255,255);
-*/
     planet (random(200,1240),random(100,620),20);
 
     

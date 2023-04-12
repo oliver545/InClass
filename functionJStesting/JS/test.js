@@ -43,6 +43,7 @@ function setup() {
     a = random(100,255);
     //fill(226,192,68,a);
     fill(x+diameter*2,diameter/2,diameter+50,a);
+    //planet moons
     ellipse(x-diameter-40,y,diameter/4,diameter/4);//planet moons
     ellipse(x-diameter,y+diameter+10,diameter/4,diameter/4);
     ellipse(x+diameter-30,y-diameter,diameter/4,diameter/4);
