@@ -18,7 +18,7 @@ function setup() {
 
     for (let i = 0; i < 8; i++) {
         planetX.push(random(-600,600));
-        planetY.push(random(-300,300));
+        planetY.push(random(-250,300));
         planetZ.push(random(0,100));
         planetSize.push(random(20,80));
     }
@@ -53,7 +53,27 @@ function setup() {
       //put starting point back to 0,0, so that it doesn't translate based on last spot
       translate(-1*planetX[i],-1*planetY[i],-1*planetZ[i]);
     }
+
+    if (mouseIsPressed ===true) {
+      randomStar(255,255);
+      randomStar(255, 100);
+    }
+
+    cursor(src="")
     
+}
+
+function randomStar(color){
+  let starX = random(width);
+  let starY = random(height);
+
+// translate box
+starX = starX - (width/2);
+starY = starY - (height/2);
+
+  noStroke();
+  fill(color);
+  ellipse (starX,starY,20,20);
 }
 
 
