@@ -48,6 +48,7 @@ function setup() {
 
     for(let i=0; i<8; i++){
       fill(R[i],G[i],B[i]);
+      movePlanets(i);
       translate(planetX[i],planetY[i],planetZ[i]);
       sphere(planetSize[i]);
       //put starting point back to 0,0, so that it doesn't translate based on last spot
@@ -58,8 +59,6 @@ function setup() {
       randomStar(255,255);
       randomStar(255, 100);
     }
-
-    cursor(src="")
     
 }
 
@@ -76,4 +75,12 @@ starY = starY - (height/2);
   ellipse (starX,starY,20,20);
 }
 
+function movePlanets(planetNum){
+  if (planetX[planetNum]>720){
+    planetX[planetNum] = -720
+  } else {
+    planetX[planetNum]++;
+  }
+
+}
 
